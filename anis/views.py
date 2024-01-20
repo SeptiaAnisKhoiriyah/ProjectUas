@@ -197,12 +197,12 @@ class CheckoutView(View):
             no_transaksi = no_transaksi,
             produk = r['product'],
             jumlah = r['quantity'],
-        )
-        instance_detail.save()
-        print(r['product'])
-        dibeliupdate=Produk.objects.get(nama_produk=r['product'])
-        dibeliupdate.dibeli+=int(r['quantity'])
-        dibeliupdate.save()
+            )
+            instance_detail.save()
+            print(r['product'])
+            dibeliupdate=Produk.objects.get(nama_produk=r['product'])
+            dibeliupdate.dibeli+=int(r['quantity'])
+            dibeliupdate.save()
 
         chats = ChatID.objects.filter(aktif=True)
         for chat in chats:
